@@ -12,6 +12,7 @@ public class Address {
     private int id;
     private String city;
     private String state;
+    private String plaque;
 
     public Address() {
     }
@@ -39,4 +40,13 @@ public class Address {
     public void setState(String state) {
         this.state = state;
     }
+
+    public String getPlaque() {
+        return plaque;
+    }
+
+    public void setPlaque(String plaque) {
+        this.plaque = plaque;
+    }
+
 }

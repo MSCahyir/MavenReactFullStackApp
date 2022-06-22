@@ -7,10 +7,11 @@ import "./Address.css";
 export default function Address() {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
+  const [plaque, setPlaque] = useState("");
 
   const handleClick = (e) => {
     e.preventDefault();
-    const address = { city, state };
+    const address = { city, state, plaque };
     console.log(address);
     fetch("http://localhost:8080/address/add", {
       method: "POST",
@@ -39,6 +40,15 @@ export default function Address() {
         fullWidth
         value={state}
         onChange={(e) => setState(e.target.value)}
+        style={{marginTop: '15px'}}
+      />
+        <TextField
+        id="outlined-basic"
+        label="Plaque Number"
+        variant="outlined"
+        fullWidth
+        value={plaque}
+        onChange={(e) => setPlaque(e.target.value)}
         style={{marginTop: '15px'}}
       />
       <Button

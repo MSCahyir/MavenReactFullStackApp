@@ -15,6 +15,10 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public Address saveAddress(Address address) {
+
+        String city = address.getCity();
+        address.setCity(city.toUpperCase());
+
         return addressRepository.save(address);
     }
 
